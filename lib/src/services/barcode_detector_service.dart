@@ -1,7 +1,6 @@
 // lib/src/services/barcode_detector_service.dart
 
 import 'dart:async';
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:multi_camera_scanner/src/models/barcode_result.dart';
 import 'package:multi_camera_scanner/src/models/camera_config.dart';

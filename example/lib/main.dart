@@ -31,7 +31,7 @@ class CameraExamplePage extends StatefulWidget {
 class _CameraExamplePageState extends State<CameraExamplePage> {
   late CameraController _cameraController;
   CameraMode _currentMode = CameraMode.photo;
-  List<BarcodeResult> _detectedBarcodes = [];
+  final List<BarcodeResult> _detectedBarcodes = [];
   bool _isInitialized = false;
 
   @override

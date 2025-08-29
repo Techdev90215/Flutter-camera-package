@@ -219,7 +219,23 @@ class CameraController with ChangeNotifier {
 
   /// Configure camera for the specified mode
   Future<void> _configureForMode(CameraMode mode) async {
-    await _initializeCamera();
+    // Drive Camerawesome state to requested mode
+    try {
+      final native = _nativeController as dynamic;
+      native.when(
+        onPreparingCamera: (_) {},
+        onPhotoMode: (s) {
+          if (mode == CameraMode.video) s.toVideoMode();
+        },
+        onVideoMode: (s) {
+          if (mode == CameraMode.photo) s.toPhotoMode();
+        },
+        onVideoRecordingMode: (s) {
+          if (mode == CameraMode.photo) s.stopRecording();
+        },
+      );
+    } catch (_) {}
+
     if (mode == CameraMode.barcode) {
       _barcodeController.startScanning();
       _updateState(CameraState.scanningBarcodes);

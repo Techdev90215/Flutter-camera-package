@@ -2,7 +2,6 @@
 
 import 'dart:async';
 import 'dart:collection';
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:multi_camera_scanner/src/models/barcode_result.dart';
 import 'package:multi_camera_scanner/src/models/camera_config.dart';
